@@ -23,20 +23,33 @@ let canvas = Canvas(width: 500, height: 500)
  Use whitespace and comments as appropriate.
  */
 // Replace this comment with your first comment – what is the goal of the code you're about to write?
-canvas.fillColor = Color.white
+
 
 for x in stride(from: 25, through: 475, by: 50){
+    canvas.defaultBorderWidth = 6
     
     for y in stride(from: 475, through: 25, by: -50){
-        
-        canvas.drawEllipse(centreX: x, centreY: y, width: 40, height: 40)
-        
-    }
+        canvas.fillColor = Color.white
+        canvas.drawEllipse(centreX: x, centreY: y, width: 25, height: 25)
     
+    let randomvalue = random(from: 1, toButNotIncluding: 5)
+    canvas.fillColor = Color.black
+   
+    if randomvalue == 1 {
+   canvas.drawEllipse(centreX: x+15, centreY: y, width: 25, height: 25)}
+    
+    if randomvalue == 2 {
+    canvas.drawEllipse(centreX: x-15, centreY: y, width: 25, height: 25)}
+    
+    if randomvalue == 3 {
+    canvas.drawEllipse(centreX: x, centreY: y+15, width: 25, height: 25)}
+    
+    if randomvalue == 4 {
+    canvas.drawEllipse(centreX: x, centreY: y-15, width: 25, height: 25)}
+                }
+
+
 }
-
-
-
 /*:
  ## Use source control
  To keep your work organized, and receive feedback, source control is a must.
@@ -57,5 +70,8 @@ for x in stride(from: 25, through: 475, by: 50){
  */
 // Don't remove the code below
 PlaygroundPage.current.liveView = canvas.imageView
+
+
+
 
 
